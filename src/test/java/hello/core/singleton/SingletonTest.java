@@ -1,4 +1,4 @@
-수package hello.core.singleton;
+package hello.core.singleton;
 
 import hello.core.AppConfig;
 import hello.core.member.MemberService;

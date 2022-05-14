@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.*;
+
 @Entity
 @Getter
 @Setter
@@ -27,10 +29,16 @@ public class Category {
     )
     private List<Item> items = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
+
+    //==연관관계 메서드== 양방향 연관일때 좋음.//
+    public void addChildCategory(Category child) {
+        this.child.add(child);
+        child.setParent(this);
+    }
 }

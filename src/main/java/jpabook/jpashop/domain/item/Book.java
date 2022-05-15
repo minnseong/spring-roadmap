@@ -13,4 +13,10 @@ public class Book extends Item {
 
     private String author;
     private String isbn;
+
+    public void change(String name, int price, int stockQuantity) {
+        setName(name);
+        setPrice(price);
+        setStockQuantity(stockQuantity);
+    }
 }

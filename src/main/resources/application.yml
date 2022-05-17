@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none # 자동으로 테이블 생성
+      ddl-auto: create # 자동으로 테이블 생성
     properties:
       hibernate:
 #        show_sql: true # system.out 출력
@@ -16,4 +16,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug # logger에 출력
-    org.hibernate.type: trace
+#    org.hibernate.type: trace
